@@ -1,7 +1,5 @@
 package com.brcom.apps.gov.nws;
 
-import java.io.IOException;
-
 import com.brcom.apps.gov.nws.service.WeatherForecastService;
 import com.brcom.apps.gov.nws.service.impl.WeatherForecastServiceImpl;
 
@@ -16,8 +14,6 @@ public class App
 	/**
 	 * 
 	 * @param args
-	 * @throws IOException
-	 * @throws InterruptedException
 	 */
 	public static void main( String[] args )
 	{
@@ -35,7 +31,7 @@ public class App
 		}
 	}
 	/**
-	 * 
+	 * Method to print weather forecast details for next five days
 	 */
 	private void printForeCast() {
 		WeatherForecastService service = new WeatherForecastServiceImpl();

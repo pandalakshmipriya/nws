@@ -40,7 +40,7 @@ public class WeatherForecastServiceImpl implements WeatherForecastService {
 	}
 
 	/**
-	 * 
+	 * Get the point details 
 	 */
 	@Override
 	public Object getPoint(double latitude, double longitude) throws IOException, InterruptedException {
@@ -59,7 +59,7 @@ public class WeatherForecastServiceImpl implements WeatherForecastService {
 		return pr;
 	}
 	/**
-	 * 
+	 * Get the Grid details 
 	 */
 	@Override
 	public Object getGrid(String office, int gridX, int gridY) throws IOException, InterruptedException {
@@ -78,7 +78,7 @@ public class WeatherForecastServiceImpl implements WeatherForecastService {
 		return gr;
 	}
 	/**
-	 * 
+	 * Get forecast details
 	 */
 	@Override
 	public String getForeCast(double latitude, double longitude){
@@ -107,11 +107,21 @@ public class WeatherForecastServiceImpl implements WeatherForecastService {
 		return null;
 	}
 
+	/**
+	 * 
+	 * @param expObj
+	 * @return Exception Object 
+	 */
 	private String getExceptionDetail(Object expObj) {
 		WeatherServiceException wExpObj  = (WeatherServiceException) expObj;
 		return wExpObj.getDetail();
 	}
-
+	/**
+	 * 
+	 * @param periods
+	 * @param days
+	 * @return Result of 5 dyas weather forecast details
+	 */
 	private String getForeCastDetailsOfDays(List<Period> periods,int days) {
 		StringBuffer sb = new StringBuffer();
 		sb.append("WeatherForeCast details for the next Five Days")
